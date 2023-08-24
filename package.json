@@ -1,0 +1,15 @@
+{
+  "name": "g",
+  "version": "0.0.1",
+  "description": "Stateful common interface for conversational LLMs",
+  "main": "g.js",
+  "scripts": {
+    "test": "node g.js"
+  },
+  "author": "Sam Rahimi",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^3.3.0",
+    "uuid": "^9.0.0"
+  }
+}
