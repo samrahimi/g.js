@@ -6,7 +6,7 @@ const {renderPromptState} = require("../g")
 //expects the openai api key to be set in the environment
 //OPENAI_API_KEY=xyz node yourapp.js
 const configuration = new Configuration({
-    apiKey: "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" // Replace with your actual OpenAI API key
+    apiKey: process.env.OPENAI_API_KEY // Replace with your actual OpenAI API key
 });
 
 
