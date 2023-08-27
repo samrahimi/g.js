@@ -1,0 +1,8 @@
+{               
+                "instruction": "Please describe the image or scene in a coherent and detailed way, based on raw data containing features detected by an image recognition model. See context for details", 
+                "context":"${data.concepts.map(x => `${x.name} (P = ${x.value})`).join('\\n')}", 
+                "adapter":"openai_chat",   
+                "model":"gpt-4", 
+                "temperature": 0.9,        
+                "max_tokens": 512
+}

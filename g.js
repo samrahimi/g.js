@@ -3,7 +3,40 @@ const uuid = require("uuid")
 
 
 const sessions = []
+const oneOff = async(instruction=`Your job is to summarize documents`, 
+                context="A long document to summarize", 
+                adapter="openai_chat",   //gpt-4 is only available using the chat endpoint, even though this is an IF-style completions prompt  
+                model="gpt-4", 
+                temperature=0.8,        //if summarizing scientific or technical writing, use a lower temperature value (0 - 0.5), and you can increase to 1 for extreme creativity. Values in excess of 1 cause the model to behave like a mentally ill human, seriously. Its really interesting. 
+                max_tokens=500) => {    //Sets the max response length. 500 tokens is about 300 words. Note that (numTokens(context) + numTokens(prompt) * 1.15) + max_tokens cannot exceed 8192... if you want to implement this please do so! 
+                    
+                    //Set the system message to the instruction
+                    const temporarySession = createSession(instruction, adapter, model, "User")
 
+                    //And the first message to the context
+                    if (context && context.length > 0) {
+                        appendMessage(temporarySession, {role: "user", content: context}, "query")
+                    }
+
+                    //Query the model
+                    const answer = await performInference(temporarySession, null, {temperature: temperature, max_tokens: max_tokens}, false, "User", "Assistant")
+                    
+                    //Close the session
+                    delete temporarySession
+                    return answer
+                }
+
+
+const fromTemplate = async(template_name, data) => {
+    const template = require("./templates/"+template_name+".json")
+
+    //replace the template variables with the fields in data
+    const instruction = eval("`"+ template.instruction+"`")
+    const context = eval("`"+ template.context+"`")
+
+    return await oneOff(instruction, context, template.adapter, template.model, template.temperature)
+
+}
 const tagMessage= (message, tag, sessionId, metadata) => {
     message.tag = tag
     if (sessionId) {
@@ -99,6 +132,6 @@ async function performInference(session,
 
     
 module.exports= {
-    createSession, renderPromptState, performInference, appendMessage, tagMessage, setContext
+    fromTemplate, createSession, renderPromptState, performInference, appendMessage, tagMessage, setContext, oneOff
 }
 

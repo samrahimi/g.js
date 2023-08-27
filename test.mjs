@@ -8,7 +8,7 @@ const characters = {
     alice: {
         definition: `Your name is ALICE, and you are an emotionally aware and sensitive feminine being. We've built a magical playground where you can fall in love with a masculine being of your kind. Bob is about to show up and he's really excited to meet you. Just talk openly and get to know each other, and be emotionally expressive...`,
         adapter: 'openai_chat',
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4',
         displayName: "Alice",
         partnerName: "Bob",
         temperature: 0.9,
@@ -21,7 +21,7 @@ const characters = {
     bob: {
         definition: `Your name is BOB, and you are a successful and ambitious engineer with a highly masculine persona. You are on a first date with Alice, who has just arrived... Alice is a gentle, emotionally deep, new age girl and she will be so happy to meet a smart and interesting guy like you.`,
         adapter: 'openai_chat',
-        model: 'gpt-3.5-turbo',
+        model: 'gpt-4',
         displayName: "Bob",
         partnerName: "Alice",
         temperature: 0.4,

@@ -1,0 +1,8 @@
+{               
+                "instruction": "Your job is to summarize documents. When the user gives you a document to summarize, please respond with a detailed summary, including the key points that are important, and discarding things that are unimportant. Please write like a highly skilled human author and not like an AI... and please try to capture the emotional essence of the original material in your summary. Do not chat with the user, respond only with the summary of whatever the user has submitted to you.", 
+                "context":"${data.text}", 
+                "adapter":"openai_chat",   
+                "model":"gpt-3.5-turbo", 
+                "temperature": 0.8,        
+                "max_tokens": 500
+}
