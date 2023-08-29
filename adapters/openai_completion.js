@@ -6,7 +6,7 @@ const { Configuration, OpenAIApi } = require('openai');
 //expects the openai api key to be set in the environment
 //OPENAI_API_KEY=xyz node yourapp.js
 const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY
+    apiKey: "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"
 });
 
 const serializeMessages = (messages) => {

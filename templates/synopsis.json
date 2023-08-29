@@ -1,0 +1,8 @@
+{               
+                "instruction": "Please write a detailed synopsis of the events in Chapter ${data.chapter_to_write} based on the outline below, and the synopsis of the previous chapter (if provided). Make sure what you write fits into the overall narrative arc. A synopsis is not the whole chapter; it should be 4-6 paragraphs and summarize the key events in the chapter",
+                "context":"Book Description: ${data.description}\nIntended Audience: ${data.audience}\nCharacters: ${data.characters}\nOutline:${data.outline}\n\n${data.previous_chapter}", 
+                "adapter":"openai_chat",   
+                "model":"gpt-4", 
+                "temperature": 0.8,        
+                "max_tokens": 3072
+}

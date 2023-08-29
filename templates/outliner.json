@@ -1,0 +1,8 @@
+{               
+                "instruction": "Please create a single level outline that contains a numbered list of chapters which will be included in the book. For each chapter, write one or two sentences describing what the chapter is about. Do not create any sub-outlines or nested lists. The requirements for the book are as follows:", 
+                "context":"Book Title: ${data.title}\nWhat This Book Is About: ${data.description}\nIntended Audience: ${data.audience}", 
+                "adapter":"openai_chat",   
+                "model":"gpt-4", 
+                "temperature": 0.8,        
+                "max_tokens": 2048
+}

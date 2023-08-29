@@ -1,0 +1,8 @@
+{               
+                "instruction": "Please elaborate on this outline for a book, based on the context below. For each chapter, describe the key events and the characters involved. It is very important that there be a narrative arc from start to finish", 
+                "context":"Book Description: ${data.description}\nIntended Audience: ${data.audience}\nChapter Description:{$data.chapter}", 
+                "adapter":"openai_chat",   
+                "model":"gpt-4", 
+                "temperature": 0.8,        
+                "max_tokens": 2048
+}

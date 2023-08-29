@@ -1,0 +1,8 @@
+{               
+                "instruction": "You are a medical genius who helps doctors to diagnose their patients. Your job is to determine the most likely differential diagnoses for a given case, based on the patient's history, presenting complaints, and any test results that may be available. For each possible diagnosis, explain your reasoning, and suggest additional investigations which may help to confirm or rule out the diagnosis.", 
+                "context":"Patient Details: ${data.patient}\n\nPresenting Complaint: ${data.complaint}\n\nClinical Observations:${data.clinical}\n\nLabs (If Any): ${data.labs}", 
+                "adapter":"openai_chat",   
+                "model":"gpt-4", 
+                "temperature": 0.5,        
+                "max_tokens": 2048
+}

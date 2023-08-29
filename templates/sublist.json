@@ -1,0 +1,8 @@
+{               
+                "instruction": "Please write a detailed point form outline for a chapter in a book, based on the following context", 
+                "context":"Book Description: ${data.description}\nIntended Audience: ${data.audience}\nChapter Description:{$data.chapter}", 
+                "adapter":"openai_chat",   
+                "model":"gpt-4", 
+                "temperature": 0.8,        
+                "max_tokens": 2048
+}
